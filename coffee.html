@@ -6,46 +6,57 @@
     <!-- Bootstrap links -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!-- Modal link thanks to https://github.com/kylefox/jquery-modal -->
+    <link rel="stylesheet" href="static/jquery.modal.css" type="text/css" media="screen" >
     <!-- Google fonts link -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway" >
     <!-- Our CSS -->
     <link rel="stylesheet" href="static/coffee.css">
 </head>
 <body>
-<div class="container">
-    <div class="starter-template">
-        <h1>Coffee Shop</h1>
-        <br>
+    <div class="container">
+        <div class="starter-template">
+            <h1>Coffee Shop</h1>
+            <br>
 
-        <img id="brew" src="static/coffee_beans.jpg" alt="make this image work with js" height="300" width="200">
+            <a href="#orderModal" rel="modal:open"><img id="brew" src="static/coffee_beans.jpg" alt="make this image work with js" height="300" width="200"></a>
 
-        <h3 id="message">Click The Image To Order Coffee</h3>
+            <h3 id="message">Click The Image To Order Coffee</h3>
 
-        <table class="table">
-            <tr>
-                <td class="col-md-2">
-                    <button class="btn btn-default" id="espresso">Espresso</button>
-                </td>
-                <td class="col-md-2">
-                    <button class="btn btn-default" id="latte">Latte</button>
-                </td>
-                <td class="col-md-2">
-                    <button class="btn btn-default" id="hot-chocolate">Hot Chocolate</button>
-                </td>
-            </tr>
-            <tr>
-                <td>$3.25</td>
-                <td>$4.15</td>
-                <td>$2.50</td>
-            </tr>
-        </table>
+            <table class="table">
+                <tr>
+                    <td class="col-md-2"><a href="#orderModal" rel="modal:open">
+                        <button class="btn btn-default" id="espresso">Espresso</button></a>
+                    </td>
+                    <td class="col-md-2"><a href="#orderModal" rel="modal:open">
+                        <button class="btn btn-default" id="latte">Latte</button></a>
+                    </td>
+                    <td class="col-md-2"><a href="#orderModal" rel="modal:open">
+                        <button class="btn btn-default" id="hot-chocolate">Hot Chocolate</button></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>$3.25</td>
+                    <td>$4.15</td>
+                    <td>$2.50</td>
+                </tr>
+            </table>
 
-        <h4>Total: <span id="revenue">$0.00</span></h4>
+            <h4>Total: <span id="revenue">$0.00</span></h4>
+
+        </div>
     </div>
-</div>
+
+    <!-- Modal HTML embedded directly into document -->
+    <div id="orderModal" style="display:none;">
+        <img src="" id="drink-picture"\>
+        <p>Thanks for ordering a <span id="drink-order"> </span>!</p>
+        <p>Your total is: <span id="drink-total"> </span></p>
+        <p><a href="#" rel="modal:close">Close</a> or press ESC</p>
+    </div>
 
 <script src="https://code.jquery.com/jquery.js"></script>
-
+<script src="jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="script.js"></script>
 
 </body>

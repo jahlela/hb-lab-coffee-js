@@ -11,3 +11,17 @@ body {
 h4{
     text-align: left;
 }
+
+
+.modal a.close-modal {
+    top: 0;
+    right: 0;
+}
+
+
+img#drink-picture {
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+
+}

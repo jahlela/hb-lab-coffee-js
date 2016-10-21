@@ -22,11 +22,26 @@ function makeCoffee(evt) {
     setTimeout(coffeeMug, 1500);
     setTimeout(coffeeBeans, 4000);
 
-    drinksOrdered.push(evt.target.id);
+    var coffeeType = evt.target.id;
+
+    drinksOrdered.push(coffeeType);
     console.log(drinksOrdered);
 
     var total = revenue(drinksOrdered);
     myRevenueMessage.html('$' + total);
+
+    if (coffeeType === 'brew') {
+        $("#drink-picture").attr('src', 'static/coffee.jpg');
+    } else if (coffeeType === 'espresso') {
+        $("#drink-picture").attr('src', 'static/espresso.jpg');
+    } else if (coffeeType === 'latte') {
+        $("#drink-picture").attr('src', 'static/latte.jpg');
+    } else if (coffeeType === 'hot-chocolate') {
+        $("#drink-picture").attr('src', 'static/hot_chocolate.jpg');
+    } 
+
+    $("#drink-order").html(coffeeType);
+    $("#drink-total").html('$' + total);
 }
 
 // Set event listeners for each coffee type
